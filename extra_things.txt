@@ -5,4 +5,5 @@ To show or hide the terminal press
 
 👉👉child le eauta matrai widget linxa ani children le list of widget linxa .
 
-
+To get the ° symbol for temperature press
+👉👉 ALT + 0,1,7,6
