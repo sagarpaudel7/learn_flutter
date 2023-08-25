@@ -1,0 +1,8 @@
+To change the vs code theme press 
+👉👉 CTRL + K + T 
+To show or hide the terminal press
+👉👉 CTRL + J
+
+👉👉child le eauta matrai widget linxa ani children le list of widget linxa .
+
+
