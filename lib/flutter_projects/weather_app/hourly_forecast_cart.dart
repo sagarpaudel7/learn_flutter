@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class HourlyForecastCard extends StatelessWidget {
   final String time;
   final IconData icon;
-  final String value;
+  final String temperature;
   const HourlyForecastCard({
     super.key,
     required this.time,
     required this.icon,
-    required this.value,
+    required this.temperature,
   });
 
   @override
@@ -25,7 +25,12 @@ class HourlyForecastCard extends StatelessWidget {
           children: [
             Text(
               time,
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
             ),
             const SizedBox(
               height: 8,
@@ -38,7 +43,7 @@ class HourlyForecastCard extends StatelessWidget {
               height: 8,
             ),
             Text(
-              "$value °C",
+              "$temperature °C",
             ),
           ],
         ),

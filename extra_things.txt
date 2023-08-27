@@ -7,3 +7,6 @@ To show or hide the terminal press
 
 To get the ° symbol for temperature press
 👉👉 ALT + 0,1,7,6
+
+To add dependency from name in direct method 
+👉👉 CTRL + p then type 👉👉 >dart:add dependency then enter package name
