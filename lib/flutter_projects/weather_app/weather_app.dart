@@ -308,7 +308,7 @@ class _WeatherAppState extends State<WeatherApp> {
                       icon: Icons.beach_access,
                       label: "Pressure",
                       value: pressure.toString(),
-                    )
+                    ),
                   ],
                 )
               ],
