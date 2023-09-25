@@ -2,14 +2,14 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-class ProviderDemo extends StatefulWidget {
-  const ProviderDemo({super.key});
+class SetstateDemo extends StatefulWidget {
+  const SetstateDemo({super.key});
 
   @override
-  State<ProviderDemo> createState() => _ProviderDemoState();
+  State<SetstateDemo> createState() => _SetstateDemoState();
 }
 
-class _ProviderDemoState extends State<ProviderDemo> {
+class _SetstateDemoState extends State<SetstateDemo> {
   int num = 0;
 
   @override
@@ -48,18 +48,18 @@ class _ProviderDemoState extends State<ProviderDemo> {
           const SizedBox(
             height: 50,
           ),
-          FloatingActionButton(
-            backgroundColor: Colors.blue,
-            onPressed: () {
-              setState(() {
-                num++;
-              });
-            },
-            child: const Icon(
-              Icons.add,
-            ),
-          )
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.blue,
+        onPressed: () {
+          setState(() {
+            num++;
+          });
+        },
+        child: const Icon(
+          Icons.add,
+        ),
       ),
     );
   }
