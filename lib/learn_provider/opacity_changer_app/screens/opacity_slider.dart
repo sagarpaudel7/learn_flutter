@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/learn_provider/provider/opacity_provider.dart';
+import 'package:learn_flutter/learn_provider/opacity_changer_app/provider/opacity_provider.dart';
 import 'package:provider/provider.dart';
 
 class OpacitySlider extends StatefulWidget {

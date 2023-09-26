@@ -6,12 +6,14 @@ import 'package:learn_flutter/flutter_projects/shoes_shop/home_page.dart';
 import 'package:learn_flutter/flutter_projects/shoes_shop/product_detail.dart';
 import 'package:learn_flutter/flutter_projects/weather_app/weather_app.dart';
 import 'package:learn_flutter/flutter_ideas/setstate.dart';
-import 'package:learn_flutter/learn_provider/provider/counter_provider.dart';
-import 'package:learn_flutter/learn_provider/provider/opacity_provider.dart';
-import 'package:learn_flutter/learn_provider/provider/wishlist_provider.dart';
-import 'package:learn_flutter/learn_provider/screens/counter_example.dart';
-import 'package:learn_flutter/learn_provider/screens/opacity_slider.dart';
-import 'package:learn_flutter/learn_provider/screens/wish_example/wishlist_demo.dart';
+import 'package:learn_flutter/learn_provider/counter_app/provider/counter_provider.dart';
+import 'package:learn_flutter/learn_provider/login_api_provider/auth_provider/login_api_provider.dart';
+import 'package:learn_flutter/learn_provider/login_api_provider/login_screen/login_screen.dart';
+import 'package:learn_flutter/learn_provider/opacity_changer_app/provider/opacity_provider.dart';
+import 'package:learn_flutter/learn_provider/wishlist_app/provider/wishlist_provider.dart';
+import 'package:learn_flutter/learn_provider/counter_app/screens/counter_example.dart';
+import 'package:learn_flutter/learn_provider/opacity_changer_app/screens/opacity_slider.dart';
+import 'package:learn_flutter/learn_provider/wishlist_app/screens/wishlist_demo.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -22,6 +24,7 @@ class LearnFlutter extends StatelessWidget {
   const LearnFlutter({super.key});
   @override
   Widget build(BuildContext context) {
+    //................................................
     //for single provider
     //  return ChangeNotifierProvider(
     // create: (context) => CounterProvider(),
@@ -38,7 +41,11 @@ class LearnFlutter extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => FavoriteProder(),
         ),
+        ChangeNotifierProvider(
+          create: (context) => LoginApiProvider(),
+        ),
       ],
+      //..............................................
       child: MaterialApp(
         title: "Shoes Shop",
         debugShowCheckedModeBanner: false,
@@ -95,7 +102,7 @@ class LearnFlutter extends StatelessWidget {
           //////////////
           useMaterial3: true,
         ),
-
+//...................................................
         //  home: const WeatherApp(),
         //👉👉 Shoes App
         /* home: ProductDetail(
@@ -105,7 +112,8 @@ class LearnFlutter extends StatelessWidget {
         // home: const SetstateDemo(),
         // home: const CounterExample(),
         // home: const OpacitySlider(),
-        home: const WishlistDemo(),
+        //home: const WishlistDemo(),
+        home: const LoginScreen(),
       ),
     );
   }

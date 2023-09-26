@@ -1,34 +1,48 @@
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/learn_provider/provider/wishlist_provider.dart';
+import 'package:learn_flutter/learn_provider/wishlist_app/provider/wishlist_provider.dart';
+import 'package:learn_flutter/learn_provider/wishlist_app/screens/wishitem.dart';
 import 'package:provider/provider.dart';
 
-class WishItem extends StatefulWidget {
-  const WishItem({super.key});
+class WishlistDemo extends StatefulWidget {
+  const WishlistDemo({super.key});
 
   @override
-  State<WishItem> createState() => _WishItemState();
+  State<WishlistDemo> createState() => _WishlistDemoState();
 }
 
-class _WishItemState extends State<WishItem> {
+class _WishlistDemoState extends State<WishlistDemo> {
   @override
   Widget build(BuildContext context) {
-    final myitems = Provider.of<FavoriteProder>(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
         title: const Text(
-          "My Favourite Items",
+          "Wishlist",
           style: TextStyle(
-            fontSize: 24,
+            fontSize: 22,
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
         ),
+        actions: [
+          InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: ((context) => const WishItem())));
+            },
+            child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              child: Icon(
+                Icons.favorite,
+                color: Colors.red,
+              ),
+            ),
+          ),
+        ],
       ),
       body: Column(
         children: [
           const Text(
-            "Favourite Item List",
+            "Total Item List",
             style: TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.bold,
@@ -37,7 +51,7 @@ class _WishItemState extends State<WishItem> {
           ),
           Expanded(
             child: ListView.builder(
-                itemCount: myitems.selectedItem.length,
+                itemCount: 25,
                 itemBuilder: (context, index) {
                   return Consumer<FavoriteProder>(
                     builder: (context, value, child) {

@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/learn_provider/provider/counter_provider.dart';
+import 'package:learn_flutter/learn_provider/counter_app/provider/counter_provider.dart';
 import 'package:provider/provider.dart';
 
 class CounterExample extends StatefulWidget {
