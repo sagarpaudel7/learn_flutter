@@ -14,6 +14,7 @@ import 'package:learn_flutter/learn_provider/wishlist_app/provider/wishlist_prov
 import 'package:learn_flutter/learn_provider/counter_app/screens/counter_example.dart';
 import 'package:learn_flutter/learn_provider/opacity_changer_app/screens/opacity_slider.dart';
 import 'package:learn_flutter/learn_provider/wishlist_app/screens/wishlist_demo.dart';
+import 'package:learn_flutter/widgets/stack/stack_widgets.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -108,12 +109,15 @@ class LearnFlutter extends StatelessWidget {
         /* home: ProductDetail(
         product: products[0],
       ),*/
-        //  home: const ShoesShop(),
+        // home: const ShoesShop(),
         // home: const SetstateDemo(),
         // home: const CounterExample(),
         // home: const OpacitySlider(),
         //home: const WishlistDemo(),
-        home: const LoginScreen(),
+        // home: const LoginScreen(),
+
+//========= WIDGETS =============
+        home: const StackWidgets(),
       ),
     );
   }

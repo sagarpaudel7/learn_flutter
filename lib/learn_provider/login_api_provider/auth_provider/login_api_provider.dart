@@ -23,7 +23,7 @@ class LoginApiProvider with ChangeNotifier {
     setLoading(true);
 
     try {
-      Response response = await post(Uri.parse('https://reqres.in/api/login'), body: {
+      Response response = await post(Uri.parse('https://jsonplaceholder.typicode.com/users'), body: {
         'email': email,
         'password': password,
       });
@@ -32,7 +32,7 @@ class LoginApiProvider with ChangeNotifier {
         setLoading(false);
       } else {
         // If the response is not successful, set loading to false after a delay
-        await Future.delayed(const Duration(seconds: 10), () {
+        await Future.delayed(const Duration(seconds: 60), () {
           setLoading(false);
           print("Loading time exceeded 10 seconds.");
         });

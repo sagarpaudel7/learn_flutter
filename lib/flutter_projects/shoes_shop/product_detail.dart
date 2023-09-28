@@ -37,11 +37,7 @@ class _ProductDetailState extends State<ProductDetail> {
             ),
             child: Text(
               widget.product['title'] as String,
-              style: const TextStyle(
-                  fontFamily: "",
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black),
+              style: const TextStyle(fontFamily: "", fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
             ),
           ),
           //👉👉spacer le flexing spacing create garxa jasle
@@ -93,8 +89,7 @@ class _ProductDetailState extends State<ProductDetail> {
                     scrollDirection: Axis.horizontal,
                     itemCount: (widget.product['sizes'] as List<int>).length,
                     itemBuilder: ((context, index) {
-                      final totalSize =
-                          (widget.product['sizes'] as List<int>)[index];
+                      final totalSize = (widget.product['sizes'] as List<int>)[index];
                       return Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: GestureDetector(
@@ -104,14 +99,11 @@ class _ProductDetailState extends State<ProductDetail> {
                             });
                           },
                           child: Chip(
-                            backgroundColor: selectedSize == totalSize
-                                ? Colors.amber
-                                : const Color(0xffffffff),
+                            backgroundColor: selectedSize == totalSize ? Colors.amber : const Color(0xffffffff),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15),
                             ),
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 7),
+                            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 7),
                             label: Text(
                               totalSize.toString(),
                               style: const TextStyle(
@@ -131,10 +123,10 @@ class _ProductDetailState extends State<ProductDetail> {
                 Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: ElevatedButton.icon(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Theme.of(context).primaryColor,
-                          minimumSize: const Size(double.infinity, 50)),
-                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(backgroundColor: Theme.of(context).primaryColor, minimumSize: const Size(double.infinity, 50)),
+                      onPressed: () {
+                        //     Navigator.pop(context);
+                      },
                       icon: const Icon(
                         Icons.shopping_cart,
                         color: Colors.white,
