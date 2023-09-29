@@ -13,6 +13,12 @@ class _ListExamplesState extends State<ListExamples> {
     "Used for Dynamic data Present.",
     "Property are same as ListView widget.",
   ];
+  var arrSep = [
+    "This is ListView.seperated.",
+    "Used for Dynamic data Present.",
+    "Property are same as ListView widget.",
+    "used separatorBuilder for seperate widget.",
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,7 +104,7 @@ class _ListExamplesState extends State<ListExamples> {
             ),
 //====================ListView.Builder=======================
             SizedBox(
-              height: 100,
+              height: 120,
               child: ListView.builder(
                   itemExtent: 40,
                   itemCount: arrDesc.length,
@@ -115,6 +121,37 @@ class _ListExamplesState extends State<ListExamples> {
             ),
             const SizedBox(
               height: 20,
+            ),
+            const Text(
+              "The ListView.Seperated widget is used for dynamic data with Divider or repeated widget.",
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+//====================ListView.seperated=======================
+            SizedBox(
+              height: 150,
+              child: ListView.separated(
+                itemCount: arrSep.length,
+                itemBuilder: (context, index) {
+                  return Text(
+                    arrSep[index],
+                    style: const TextStyle(
+                      color: Colors.red,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  );
+                },
+                separatorBuilder: (context, index) {
+                  return const Divider(
+                    thickness: 3,
+                    color: Colors.orange,
+                  );
+                },
+              ),
             ),
           ],
         ),
