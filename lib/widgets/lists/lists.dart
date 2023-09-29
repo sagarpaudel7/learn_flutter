@@ -8,6 +8,11 @@ class ListExamples extends StatefulWidget {
 }
 
 class _ListExamplesState extends State<ListExamples> {
+  var arrDesc = [
+    "This is ListView.Builder.",
+    "Used for Dynamic data Present.",
+    "Property are same as ListView widget.",
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,7 +84,38 @@ class _ListExamplesState extends State<ListExamples> {
                   ),
                 ],
               ),
-            )
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Text(
+              "The ListView.Builder widget is used for dynamic data present.",
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+//====================ListView.Builder=======================
+            SizedBox(
+              height: 100,
+              child: ListView.builder(
+                  itemExtent: 40,
+                  itemCount: arrDesc.length,
+                  itemBuilder: (context, index) {
+                    return Text(
+                      arrDesc[index],
+                      style: const TextStyle(
+                        color: Colors.red,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    );
+                  }),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
           ],
         ),
       ),
