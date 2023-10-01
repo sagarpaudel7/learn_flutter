@@ -147,6 +147,7 @@ class _ListExamplesState extends State<ListExamples> {
                 },
                 separatorBuilder: (context, index) {
                   return const Divider(
+                    endIndent: 50,
                     thickness: 3,
                     color: Colors.orange,
                   );
