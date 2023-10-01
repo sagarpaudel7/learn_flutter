@@ -15,6 +15,7 @@ import 'package:learn_flutter/learn_provider/counter_app/screens/counter_example
 import 'package:learn_flutter/learn_provider/opacity_changer_app/screens/opacity_slider.dart';
 import 'package:learn_flutter/learn_provider/wishlist_app/screens/wishlist_demo.dart';
 import 'package:learn_flutter/widgets/card/card_demo.dart';
+import 'package:learn_flutter/widgets/list_tile/listtile.dart';
 import 'package:learn_flutter/widgets/lists/lists.dart';
 import 'package:learn_flutter/widgets/stack/stack_widgets.dart';
 import 'package:provider/provider.dart';
@@ -121,7 +122,8 @@ class LearnFlutter extends StatelessWidget {
 //========= WIDGETS =============
         //home: const StackWidgets(), //stack widget
         // home: const ListExamples(), //ListView,builder & seperated
-        home: const CardDemo(),
+        // home: const CardDemo(),
+        home: const ListTileDemo(),
       ),
     );
   }
