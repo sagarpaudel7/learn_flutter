@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:ffi';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -133,8 +132,7 @@ class _WeatherAppState extends State<WeatherApp> {
                   //👉👉card to bubble container in little upside
                   child: Card(
                     elevation: 10,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16)),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),
                       //👉👉cliprect for set borderradius
@@ -167,8 +165,7 @@ class _WeatherAppState extends State<WeatherApp> {
                                         ),
                                         currentSky == "Rain"
                                             ? Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
+                                                mainAxisAlignment: MainAxisAlignment.center,
                                                 children: const [
                                                   Icon(
                                                     Icons.water_drop,
@@ -260,18 +257,12 @@ class _WeatherAppState extends State<WeatherApp> {
                       // 👉👉11 means starting index ani 16 vaneko ending index ho dt_txt result ko. yo intl package ko alternative ho
                       final gettime = time;
                       */
-                      final gettime =
-                          DateTime.parse(data['list'][index + 1]['dt_txt']);
-                      final icontype =
-                          data['list'][index + 1]['weather'][0]['main'];
-                      final temp =
-                          (data['list'][index + 1]['main']['temp'] - 273.15)
-                              .toStringAsFixed(0);
+                      final gettime = DateTime.parse(data['list'][index + 1]['dt_txt']);
+                      final icontype = data['list'][index + 1]['weather'][0]['main'];
+                      final temp = (data['list'][index + 1]['main']['temp'] - 273.15).toStringAsFixed(0);
                       return HourlyForecastCard(
                         time: DateFormat.j().format(gettime),
-                        icon: icontype == "Rain" || icontype == "Clouds"
-                            ? Icons.cloud
-                            : Icons.sunny,
+                        icon: icontype == "Rain" || icontype == "Clouds" ? Icons.cloud : Icons.sunny,
                         temperature: temp,
                       );
                     },
