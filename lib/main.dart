@@ -22,6 +22,7 @@ import 'package:learn_flutter/widgets/stack/stack_widgets.dart';
 import 'package:provider/provider.dart';
 
 import 'widgets/about_responsive/responsive.dart';
+import 'widgets/sliver_appbar/sliver_appbar.dart';
 
 void main() {
   runApp(const LearnFlutter());
@@ -128,7 +129,8 @@ class LearnFlutter extends StatelessWidget {
         // home: const CardDemo(),
         // home: const ListTileDemo(),
         //home: const GridViewDemo(),
-        home: const ResponsiveLayout(), //learn about create responsive widget
+        // home: const ResponsiveLayout(), //learn about create responsive widget
+        home: const SliverAppbarDemo(),
       ),
     );
   }
