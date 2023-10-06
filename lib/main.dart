@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/flutter_ideas/ui_challenge.dart';
 import 'package:learn_flutter/flutter_projects/currency_converter_app/currency_converter.dart';
 import 'package:learn_flutter/flutter_ideas/column_ideas.dart';
 import 'package:learn_flutter/flutter_projects/shoes_shop/global_pro_variable.dart';
@@ -15,6 +16,7 @@ import 'package:learn_flutter/learn_provider/counter_app/screens/counter_example
 import 'package:learn_flutter/learn_provider/opacity_changer_app/screens/opacity_slider.dart';
 import 'package:learn_flutter/learn_provider/wishlist_app/screens/wishlist_demo.dart';
 import 'package:learn_flutter/widgets/card/card_demo.dart';
+import 'package:learn_flutter/widgets/drawer/drawer.dart';
 import 'package:learn_flutter/widgets/grid_view/gridview.dart';
 import 'package:learn_flutter/widgets/list_tile/listtile.dart';
 import 'package:learn_flutter/widgets/lists/lists.dart';
@@ -123,6 +125,9 @@ class LearnFlutter extends StatelessWidget {
         //home: const WishlistDemo(),
         // home: const LoginScreen(),
 
+//==========Self UI Challenges 😅😁 =============
+        home: const UiChallenge(), //create curve container
+
 //========= WIDGETS =============
         //home: const StackWidgets(), //stack widget
         // home: const ListExamples(), //ListView,builder & seperated
@@ -130,7 +135,8 @@ class LearnFlutter extends StatelessWidget {
         // home: const ListTileDemo(),
         //home: const GridViewDemo(),
         // home: const ResponsiveLayout(), //learn about create responsive widget
-        home: const SliverAppbarDemo(),
+        // home: const SliverAppbarDemo(),
+        //home: const DrawerDemo(),
       ),
     );
   }
