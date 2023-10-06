@@ -15,7 +15,7 @@ class ResponsiveLayout extends StatelessWidget {
         backgroundColor: Colors.blue,
         title: Center(
           child: Text(
-            "Learn about Responsive",
+            "Learn about Responsive UI",
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
