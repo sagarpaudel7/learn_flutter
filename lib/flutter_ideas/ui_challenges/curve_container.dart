@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class UiChallenge extends StatelessWidget {
-  const UiChallenge({super.key});
+class CurveContainerChallenge extends StatelessWidget {
+  const CurveContainerChallenge({super.key});
 
   @override
   Widget build(BuildContext context) {
