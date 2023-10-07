@@ -20,7 +20,7 @@ class SliverAppbarDemo extends StatelessWidget {
             leading: const Icon(Icons.arrow_back_ios),
             title: const Text("Sliver Appbar", style: TextStyle(color: Colors.blue, fontSize: 24)),
             actions: const [Icon(Icons.settings), Icon(Icons.video_call)],
-            backgroundColor: Colors.amber,
+            backgroundColor: const Color(0xFF2A261B),
             expandedHeight: 200,
             //========== for flexiable Appbar =================
             flexibleSpace: FlexibleSpaceBar(
@@ -34,7 +34,7 @@ class SliverAppbarDemo extends StatelessWidget {
                 StretchMode.zoomBackground, //zoom the background
               ],
               background: Image.asset(
-                "assets/images/others/night_view.jpg",
+                "assets/images/others/night.jpg",
                 fit: BoxFit.cover,
                 width: double.infinity,
               ),

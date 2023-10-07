@@ -126,7 +126,7 @@ class LearnFlutter extends StatelessWidget {
         // home: const LoginScreen(),
 
 //==========Self UI Challenges 😅😁 =============
-        home: const CurveContainerChallenge(), //create curve container
+        // home: const CurveContainerChallenge(), //create curve container
 
 //========= WIDGETS =============
         //home: const StackWidgets(), //stack widget
@@ -135,8 +135,8 @@ class LearnFlutter extends StatelessWidget {
         // home: const ListTileDemo(),
         //home: const GridViewDemo(),
         // home: const ResponsiveLayout(), //learn about create responsive widget
-        // home: const SliverAppbarDemo(),
-        //home: const DrawerDemo(),
+        //home: const SliverAppbarDemo(),
+        home: const DrawerDemo(),
       ),
     );
   }
