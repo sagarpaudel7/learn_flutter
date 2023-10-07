@@ -40,6 +40,7 @@ class SliverAppbarDemo extends StatelessWidget {
               ),
             ),
           ),
+
           //===========it used to as a body to use normal widget in sliver ===============
           SliverToBoxAdapter(
             child: Padding(
