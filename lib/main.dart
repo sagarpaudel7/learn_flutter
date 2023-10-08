@@ -21,6 +21,7 @@ import 'package:learn_flutter/widgets/drawer/drawer.dart';
 import 'package:learn_flutter/widgets/grid_view/gridview.dart';
 import 'package:learn_flutter/widgets/list_tile/listtile.dart';
 import 'package:learn_flutter/widgets/lists/lists.dart';
+import 'package:learn_flutter/widgets/rich_text/rich_text.dart';
 import 'package:learn_flutter/widgets/stack/stack_widgets.dart';
 import 'package:provider/provider.dart';
 
@@ -138,7 +139,8 @@ class LearnFlutter extends StatelessWidget {
         // home: const ResponsiveLayout(), //learn about create responsive widget
         //home: const SliverAppbarDemo(),
         //home: const DrawerDemo(),
-        home: const ButtonDemo(),
+        // home: const ButtonDemo(),//all types of button
+        home: const RichTextDemo(),
       ),
     );
   }
