@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/animation/hero_animation/hero1.dart';
 import 'package:learn_flutter/flutter_ideas/ui_challenges/curve_container.dart';
+import 'package:learn_flutter/flutter_ideas/ui_challenges/glassmorphism.dart';
 import 'package:learn_flutter/flutter_projects/currency_converter_app/currency_converter.dart';
 import 'package:learn_flutter/flutter_ideas/column_ideas.dart';
 import 'package:learn_flutter/flutter_projects/shoes_shop/global_pro_variable.dart';
@@ -130,9 +131,10 @@ class LearnFlutter extends StatelessWidget {
 
 //==========Self UI Challenges 😅😁 =============
         // home: const CurveContainerChallenge(), //create curve container
+        home: const GlassMorphismDemo(),
 
 //================ Animations ====================
-        home: const HeroAnimation(), //hero animation
+        //home: const HeroAnimation(), //hero animation
 //========= WIDGETS =============
         //home: const StackWidgets(), //stack widget
         // home: const ListExamples(), //ListView,builder & seperated
