@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
 import 'package:learn_flutter/constants.dart/appbar.dart';
-import 'package:learn_flutter/constants.dart/heading_text.dart';
 
 import 'frosted_glass.dart';
 
