@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:learn_flutter/constants.dart/appbar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
 
 class NeomorphismDemo extends StatefulWidget {
   const NeomorphismDemo({super.key});
@@ -39,29 +40,31 @@ class _NeomorphismDemoState extends State<NeomorphismDemo> {
                       color: Colors.grey[300],
                       borderRadius: BorderRadius.circular(40),
                       boxShadow: _isElevated
-                          ? const [
-                              BoxShadow(
+                          ? [
+                              const BoxShadow(
                                 color: Colors.white,
                                 offset: Offset(-8, -8),
                                 spreadRadius: 1,
                                 blurStyle: BlurStyle.inner,
+                                inset: true,
                               ),
-                              BoxShadow(
+                              const BoxShadow(
                                 color: Colors.grey,
                                 offset: Offset(8, 8),
                                 spreadRadius: 1,
                                 blurStyle: BlurStyle.inner,
+                                inset: true,
                               ),
                             ]
-                          : const [
-                              BoxShadow(
+                          : [
+                              const BoxShadow(
                                 color: Colors.white,
                                 offset: Offset(-8, -8),
                                 spreadRadius: 1,
                                 blurRadius: 15,
                                 blurStyle: BlurStyle.outer,
                               ),
-                              BoxShadow(
+                              const BoxShadow(
                                 color: Colors.grey,
                                 offset: Offset(8, 8),
                                 spreadRadius: 1,
