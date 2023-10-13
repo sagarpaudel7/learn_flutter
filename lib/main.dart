@@ -1,35 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/animation/hero_animation/hero1.dart';
-import 'package:learn_flutter/ui_challenges/curve_container.dart';
-import 'package:learn_flutter/ui_challenges/glassmorphism.dart';
-import 'package:learn_flutter/flutter_projects/currency_converter_app/currency_converter.dart';
-import 'package:learn_flutter/flutter_ideas/column_ideas.dart';
-import 'package:learn_flutter/flutter_projects/shoes_shop/global_pro_variable.dart';
-import 'package:learn_flutter/flutter_projects/shoes_shop/home_page.dart';
-import 'package:learn_flutter/flutter_projects/shoes_shop/product_detail.dart';
-import 'package:learn_flutter/flutter_projects/weather_app/weather_app.dart';
-import 'package:learn_flutter/flutter_ideas/setstate.dart';
 import 'package:learn_flutter/learn_provider/counter_app/provider/counter_provider.dart';
 import 'package:learn_flutter/learn_provider/login_api_provider/auth_provider/login_api_provider.dart';
-import 'package:learn_flutter/learn_provider/login_api_provider/login_screen/login_screen.dart';
 import 'package:learn_flutter/learn_provider/opacity_changer_app/provider/opacity_provider.dart';
 import 'package:learn_flutter/learn_provider/wishlist_app/provider/wishlist_provider.dart';
-import 'package:learn_flutter/learn_provider/counter_app/screens/counter_example.dart';
-import 'package:learn_flutter/learn_provider/opacity_changer_app/screens/opacity_slider.dart';
-import 'package:learn_flutter/learn_provider/wishlist_app/screens/wishlist_demo.dart';
-import 'package:learn_flutter/ui_challenges/neomorphism.dart';
-import 'package:learn_flutter/widgets/buttons/button.dart';
-import 'package:learn_flutter/widgets/card/card_demo.dart';
-import 'package:learn_flutter/widgets/drawer/drawer.dart';
-import 'package:learn_flutter/widgets/grid_view/gridview.dart';
-import 'package:learn_flutter/widgets/list_tile/listtile.dart';
-import 'package:learn_flutter/widgets/lists/lists.dart';
-import 'package:learn_flutter/widgets/rich_text/rich_text.dart';
-import 'package:learn_flutter/widgets/stack/stack_widgets.dart';
+import 'package:learn_flutter/widgets/switch/switch_widget.dart';
 import 'package:provider/provider.dart';
-
-import 'widgets/about_responsive/responsive.dart';
-import 'widgets/sliver_appbar/sliver_appbar.dart';
 
 void main() {
   runApp(const LearnFlutter());
@@ -133,7 +108,7 @@ class LearnFlutter extends StatelessWidget {
 //==========Self UI Challenges 😅😁 =============
         // home: const CurveContainerChallenge(), //create curve container
         //home: const GlassMorphismDemo(), //for glass effects
-        home: const NeomorphismDemo(),
+        //home: const NeomorphismDemo(),
 
 //================ Animations ====================
         //home: const HeroAnimation(), //hero animation
@@ -148,6 +123,7 @@ class LearnFlutter extends StatelessWidget {
         //home: const DrawerDemo(),
         // home: const ButtonDemo(),//all types of button
         //home: const RichTextDemo(),
+        home: const SwitchWidget(),
       ),
     );
   }
