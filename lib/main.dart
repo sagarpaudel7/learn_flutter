@@ -3,9 +3,8 @@ import 'package:learn_flutter/learn_provider/counter_app/provider/counter_provid
 import 'package:learn_flutter/learn_provider/login_api_provider/auth_provider/login_api_provider.dart';
 import 'package:learn_flutter/learn_provider/opacity_changer_app/provider/opacity_provider.dart';
 import 'package:learn_flutter/learn_provider/wishlist_app/provider/wishlist_provider.dart';
+import 'package:learn_flutter/widgets/radio_button/radio_button.dart';
 import 'package:provider/provider.dart';
-
-import 'widgets/fraction_sizebox/fraction_sizebox.dart';
 
 void main() {
   runApp(const LearnFlutter());
@@ -125,7 +124,8 @@ class LearnFlutter extends StatelessWidget {
         // home: const ButtonDemo(),//all types of button
         //home: const RichTextDemo(),
         //home: const SwitchWidget(),
-        home: const FractionSizeboxWidget(),
+        //home: const FractionSizeboxWidget(),
+        home: const RadioButtonWidget(),
       ),
     );
   }
