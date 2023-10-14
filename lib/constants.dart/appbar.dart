@@ -8,7 +8,7 @@ class Appbar {
       title: Center(
         child: Text(
           text,
-          style: const TextStyle(color: Colors.deepOrange, fontSize: 24),
+          style: const TextStyle(color: Colors.white, fontSize: 24),
         ),
       ),
     );
