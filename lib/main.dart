@@ -6,6 +6,8 @@ import 'package:learn_flutter/learn_provider/wishlist_app/provider/wishlist_prov
 import 'package:learn_flutter/widgets/checkbox/checkbox_widget.dart';
 import 'package:provider/provider.dart';
 
+import 'widgets/expansion_tile/expansion_tile_widget.dart';
+
 void main() {
   runApp(const LearnFlutter());
 }
@@ -126,7 +128,8 @@ class LearnFlutter extends StatelessWidget {
         //home: const SwitchWidget(),
         //home: const FractionSizeboxWidget(),
         //home: const RadioButtonWidget(),
-        home: const CheckBoxWidget(),
+        //home: const CheckBoxWidget(),
+        home: const ExpansionTileWidget(),
       ),
     );
   }
