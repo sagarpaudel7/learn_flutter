@@ -3,7 +3,7 @@ import 'package:learn_flutter/learn_provider/counter_app/provider/counter_provid
 import 'package:learn_flutter/learn_provider/login_api_provider/auth_provider/login_api_provider.dart';
 import 'package:learn_flutter/learn_provider/opacity_changer_app/provider/opacity_provider.dart';
 import 'package:learn_flutter/learn_provider/wishlist_app/provider/wishlist_provider.dart';
-import 'package:learn_flutter/widgets/future_builder/future_builder_widget.dart';
+import 'package:learn_flutter/widgets/snackbar/snackbar_widget.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -129,7 +129,8 @@ class LearnFlutter extends StatelessWidget {
         //home: const CheckBoxWidget(),
         //home: const ExpansionTileWidget(),
         //home: const StreamBuilderWidget(),
-        home: const FutureBuilderWidget(),
+        //home: const FutureBuilderWidget(),
+        home: const SnackBarWidget(),
       ),
     );
   }
