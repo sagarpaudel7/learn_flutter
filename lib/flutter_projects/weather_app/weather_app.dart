@@ -164,9 +164,9 @@ class _WeatherAppState extends State<WeatherApp> {
                                           size: 64,
                                         ),
                                         currentSky == "Rain"
-                                            ? Row(
+                                            ? const Row(
                                                 mainAxisAlignment: MainAxisAlignment.center,
-                                                children: const [
+                                                children: [
                                                   Icon(
                                                     Icons.water_drop,
                                                     size: 12,

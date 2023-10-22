@@ -11,7 +11,7 @@ class _CardDemoState extends State<CardDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFFFAFA),
+      backgroundColor: const Color(0xFFFFFAFA),
       appBar: AppBar(
         backgroundColor: Colors.blue,
         title: const Center(

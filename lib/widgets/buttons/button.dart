@@ -70,7 +70,7 @@ class ButtonDemo extends StatelessWidget {
               OutlinedButton(
                 onPressed: () {},
                 style: ButtonStyle(
-                  side: MaterialStateProperty.all<BorderSide>(BorderSide(color: Colors.blue, width: 2)),
+                  side: MaterialStateProperty.all<BorderSide>(const BorderSide(color: Colors.blue, width: 2)),
                 ),
                 child: const Text("Button"),
               ),
@@ -83,7 +83,7 @@ class ButtonDemo extends StatelessWidget {
               IconButton(
                   onPressed: () {},
                   style: ButtonStyle(
-                    side: MaterialStateProperty.all<BorderSide>(BorderSide(color: Colors.blue, width: 2)),
+                    side: MaterialStateProperty.all<BorderSide>(const BorderSide(color: Colors.blue, width: 2)),
                     //    shape: MaterialStateProperty.all<OutlinedBorder>(RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)))
                   ),
                   icon: const Icon(Icons.call)),
@@ -103,7 +103,7 @@ class ButtonDemo extends StatelessWidget {
                 color: Colors.blue,
               ),
               HeadingText.headingTetx("DropDown Button"),
-              DropdownButton(items: [], iconDisabledColor: Colors.blue, onChanged: (value) {}),
+              DropdownButton(items: const [], iconDisabledColor: Colors.blue, onChanged: (value) {}),
               //======= =====PopUp Menu Button =============
               const Divider(
                 thickness: 5,

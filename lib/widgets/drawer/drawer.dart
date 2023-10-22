@@ -23,14 +23,14 @@ class DrawerDemo extends StatelessWidget {
           backgroundColor: Colors.white,
           child: ListView(
             children: [
-              DrawerHeader(
-                margin: const EdgeInsets.all(0),
-                padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
-                decoration: const BoxDecoration(
+              const DrawerHeader(
+                margin: EdgeInsets.all(0),
+                padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
+                decoration: BoxDecoration(
                   color: Colors.blue,
                 ),
                 child: Column(
-                  children: const [
+                  children: [
                     CircleAvatar(
                       radius: 35,
                       backgroundImage: AssetImage("assets/images/others/night.jpg"),

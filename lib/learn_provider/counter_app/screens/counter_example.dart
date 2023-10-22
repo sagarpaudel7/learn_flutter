@@ -14,6 +14,7 @@ class CounterExample extends StatefulWidget {
 class _CounterExampleState extends State<CounterExample> {
   @override
   void initState() {
+    super.initState();
     final counterProvider = Provider.of<CounterProvider>(context, listen: false);
 
     Timer.periodic(const Duration(seconds: 2), (timer) {

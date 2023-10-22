@@ -17,13 +17,13 @@ class _CurrencyConverterState extends State<CurrencyConverter> {
   @override
   Widget build(BuildContext context) {
     //👉👉 border variable banayeko reuse garna lai same thing
-    final border = OutlineInputBorder(
+    const border = OutlineInputBorder(
       borderSide: BorderSide(
         color: Colors.red,
         width: 3,
         // style: BorderStyle.none
         style: BorderStyle.solid,
-        strokeAlign: StrokeAlign.outside,
+        strokeAlign: BorderSide.strokeAlignOutside,
       ),
       borderRadius: BorderRadius.all(Radius.circular(50)),
     );
@@ -32,7 +32,7 @@ class _CurrencyConverterState extends State<CurrencyConverter> {
     return Scaffold(
       backgroundColor: const Color(0xFFfcfcff),
       appBar: AppBar(
-        backgroundColor: Color(0xFFfcfcff),
+        backgroundColor: const Color(0xFFfcfcff),
         elevation: 0,
         title: const Center(
           child: Text(
@@ -68,7 +68,7 @@ class _CurrencyConverterState extends State<CurrencyConverter> {
                   color: Colors.black,
                   fontSize: 20,
                 ),
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   /*   label: Text(
                   "Please enter the amount in USD",
                   style: TextStyle(
@@ -86,10 +86,10 @@ class _CurrencyConverterState extends State<CurrencyConverter> {
                       */
 
                   hintText: "Please enter the amount in USD",
-                  hintStyle: const TextStyle(
+                  hintStyle: TextStyle(
                     color: Colors.blue,
                   ),
-                  prefixIcon: const Icon(
+                  prefixIcon: Icon(
                     Icons.monetization_on_outlined,
                     color: Colors.red,
                   ),

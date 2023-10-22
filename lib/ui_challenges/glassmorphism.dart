@@ -56,8 +56,8 @@ class _GlassMorphismDemoState extends State<GlassMorphismDemo> {
                             const Color((0xFFfcfcff)).withOpacity(0.05),
                           ],
                         ),
-                        child: Column(
-                          children: const [
+                        child: const Column(
+                          children: [
                             Text(
                               "Data",
                               style: TextStyle(color: Colors.white, fontSize: 50),

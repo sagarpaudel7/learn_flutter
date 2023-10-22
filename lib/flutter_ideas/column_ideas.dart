@@ -5,14 +5,14 @@ class ColumnIdeas extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
         body: Center(
       child: ColoredBox(
-        color: const Color(0xFFff5f1f),
+        color: Color(0xFFff5f1f),
         child: Column(
           //crossAxisAlignment: CrossAxisAlignment.center, 👉it doesn't work cos column take only required size of widgets so no other space available.
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             Text(
               "Flutter Column Property",
               style: TextStyle(

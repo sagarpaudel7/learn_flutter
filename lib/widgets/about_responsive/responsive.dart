@@ -63,7 +63,7 @@ class ResponsiveLayout extends StatelessWidget {
                 Text(
                   "Wow finally make it repsonsive😊😁",
                   style: TextStyle(
-                    color: Color(0xFFFF0000),
+                    color: const Color(0xFFFF0000),
                     fontWeight: FontWeight.bold,
                     fontSize: isDesktop ? 24 : 18, // Adjust font size for mobile
                   ),
