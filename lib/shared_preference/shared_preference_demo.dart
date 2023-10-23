@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/constants.dart/appbar.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferenceDemo extends StatefulWidget {
   const SharedPreferenceDemo({super.key});
@@ -9,8 +10,22 @@ class SharedPreferenceDemo extends StatefulWidget {
 }
 
 class _SharedPreferenceDemoState extends State<SharedPreferenceDemo> {
-  TextEditingController name = TextEditingController();
-  TextEditingController password = TextEditingController();
+  TextEditingController nameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  // ignore: constant_identifier_names
+  static const String KEYNAME = "name";
+  // ignore: constant_identifier_names
+  static const String KEYPASSWORD = "password";
+
+  var nameValue = "...";
+  var passwordValue = "...";
+
+  @override
+  void initState() {
+    super.initState();
+    getData();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +38,7 @@ class _SharedPreferenceDemoState extends State<SharedPreferenceDemo> {
           children: [
 //=============== for name ==============
             TextField(
-              controller: name,
+              controller: nameController,
               decoration: InputDecoration(
                 label: const Text("Name"),
                 enabledBorder: OutlineInputBorder(
@@ -41,7 +56,7 @@ class _SharedPreferenceDemoState extends State<SharedPreferenceDemo> {
             ),
 //================ for password ==============
             TextField(
-              controller: password,
+              controller: passwordController,
               obscureText: true,
               decoration: InputDecoration(
                 label: const Text("Password"),
@@ -58,13 +73,19 @@ class _SharedPreferenceDemoState extends State<SharedPreferenceDemo> {
             const SizedBox(
               height: 30,
             ),
-            ElevatedButton(onPressed: () {}, child: const Text("Save")),
+            ElevatedButton(
+                onPressed: () async {
+                  SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+                  sharedPreferences.setString(KEYNAME, nameController.text.toString());
+                  sharedPreferences.setString(KEYPASSWORD, passwordController.text.toString());
+                },
+                child: const Text("Save")),
             const SizedBox(
               height: 30,
             ),
-            const Text(
-              "Hello ... your password is ...",
-              style: TextStyle(
+            Text(
+              "Hello $nameValue, your password is \"$passwordValue\"",
+              style: const TextStyle(
                 color: Colors.black,
                 fontSize: 20,
                 fontWeight: FontWeight.w500,
@@ -74,5 +95,15 @@ class _SharedPreferenceDemoState extends State<SharedPreferenceDemo> {
         ),
       ),
     );
+  }
+
+  getData() async {
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    var getName = sp.getString(KEYNAME);
+    var getPassword = sp.getString(KEYPASSWORD);
+    setState(() {
+      nameValue = getName != null ? getName : "...";
+      passwordValue = getPassword != null ? getPassword : "...";
+    });
   }
 }
