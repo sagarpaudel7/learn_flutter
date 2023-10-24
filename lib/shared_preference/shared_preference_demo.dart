@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/constants.dart/appbar.dart';
+import 'package:learn_flutter/shared_preference/sp_with_fb.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferenceDemo extends StatefulWidget {
@@ -73,13 +74,35 @@ class _SharedPreferenceDemoState extends State<SharedPreferenceDemo> {
             const SizedBox(
               height: 30,
             ),
+            Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                      onPressed: () async {
+                        SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+                        sharedPreferences.setString(KEYNAME, nameController.text.toString());
+                        sharedPreferences.setString(KEYPASSWORD, passwordController.text.toString());
+                      },
+                      child: const Text("Save")),
+                  IconButton(
+                      onPressed: () async {
+                        SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+                        //  sharedPreferences.remove("name");//for specific data
+                        sharedPreferences.clear();
+                      },
+                      icon: const Icon(
+                        Icons.delete_forever,
+                        color: Colors.red,
+                      ))
+                ],
+              ),
+            ),
             ElevatedButton(
-                onPressed: () async {
-                  SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-                  sharedPreferences.setString(KEYNAME, nameController.text.toString());
-                  sharedPreferences.setString(KEYPASSWORD, passwordController.text.toString());
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const SharedPreferencesWithFutureBuilder()));
                 },
-                child: const Text("Save")),
+                child: const Text("Shared pref. with Future Builder")),
             const SizedBox(
               height: 30,
             ),
@@ -97,13 +120,13 @@ class _SharedPreferenceDemoState extends State<SharedPreferenceDemo> {
     );
   }
 
-  getData() async {
+  void getData() async {
     SharedPreferences sp = await SharedPreferences.getInstance();
     var getName = sp.getString(KEYNAME);
     var getPassword = sp.getString(KEYPASSWORD);
     setState(() {
-      nameValue = getName != null ? getName : "...";
-      passwordValue = getPassword != null ? getPassword : "...";
+      nameValue = getName ?? nameValue;
+      passwordValue = getPassword ?? passwordValue;
     });
   }
 }
