@@ -43,6 +43,7 @@ dependencies:
   font_awesome_flutter: ^10.4.0
   flutter_inset_box_shadow: ^1.0.8
   shared_preferences: ^2.2.0
+  sqflite: ^2.3.0
   
 
 dev_dependencies:
