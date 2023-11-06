@@ -3,7 +3,6 @@ import 'package:learn_flutter/learn_provider/counter_app/provider/counter_provid
 import 'package:learn_flutter/learn_provider/login_api_provider/auth_provider/login_api_provider.dart';
 import 'package:learn_flutter/learn_provider/opacity_changer_app/provider/opacity_provider.dart';
 import 'package:learn_flutter/learn_provider/wishlist_app/provider/wishlist_provider.dart';
-import 'package:learn_flutter/shared_preference/shared_preference_demo.dart';
 import 'package:learn_flutter/sqflite/home.dart';
 import 'package:provider/provider.dart';
 

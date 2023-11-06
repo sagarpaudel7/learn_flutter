@@ -44,6 +44,7 @@ dependencies:
   flutter_inset_box_shadow: ^1.0.8
   shared_preferences: ^2.2.0
   sqflite: ^2.3.0
+  path_provider: ^2.1.1
   
 
 dev_dependencies:
