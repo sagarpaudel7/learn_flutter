@@ -37,14 +37,24 @@ class _SqfLiteDemoState extends State<SqfLiteDemo> {
                 return ListView.builder(
                   itemCount: snapshot.data?.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return Card(
-                      child: ListTile(
+                    return Dismissible(
+                      direction: DismissDirection.endToStart,
+                      background: Container(
+                        color: Colors.red,
+                        child: Icon(Icons.delete_forever),
+                      ),
+                      onDismissed: (DismissDirection direction) {},
+                      key: ValueKey<int>(snapshot.data![index].id!),
+                      child: Card(
+                        child: ListTile(
                           title: Text(
                             snapshot.data![index].title.toString(),
                           ),
                           subtitle: Text(
                             snapshot.data![index].desc.toString(),
-                          )),
+                          ),
+                        ),
+                      ),
                     );
                   },
                 );
