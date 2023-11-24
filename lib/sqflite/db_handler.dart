@@ -37,4 +37,14 @@ class DBHelper {
     final List<Map<String, Object?>> queryResult = await dbClient!.query("my_notes");
     return queryResult.map((e) => NotesModel.fromMap(e)).toList();
   }
+
+  Future<int> delete(int id) async {
+    var dbClient = await db;
+    return await dbClient!.delete("my_notes", where: "id = ?", whereArgs: [id]);
+  }
+
+  Future<int> update(NotesModel notesModel) async {
+    var dbClient = await db;
+    return await dbClient!.update("my_notes", notesModel.toMap(), where: "id = ?", whereArgs: [notesModel.id]);
+  }
 }

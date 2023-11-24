@@ -34,30 +34,53 @@ class _SqfLiteDemoState extends State<SqfLiteDemo> {
             child: FutureBuilder(
               future: notesList,
               builder: (BuildContext context, AsyncSnapshot<List<NotesModel>> snapshot) {
-                return ListView.builder(
-                  itemCount: snapshot.data?.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Dismissible(
-                      direction: DismissDirection.endToStart,
-                      background: Container(
-                        color: Colors.red,
-                        child: Icon(Icons.delete_forever),
-                      ),
-                      onDismissed: (DismissDirection direction) {},
-                      key: ValueKey<int>(snapshot.data![index].id!),
-                      child: Card(
-                        child: ListTile(
-                          title: Text(
-                            snapshot.data![index].title.toString(),
+                if (snapshot.hasData) {
+                  return ListView.builder(
+                    itemCount: snapshot.data?.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return InkWell(
+                        onTap: () {
+                          dbHelper!.update(NotesModel(
+                              id: snapshot.data![index].id!,
+                              title: "Updated Title",
+                              age: 22,
+                              desc: "Now the desc. changed.",
+                              email: "Example@gmail.com"));
+                          setState(() {
+                            notesList = dbHelper!.getNotesList();
+                          });
+                        },
+                        child: Dismissible(
+                          direction: DismissDirection.endToStart,
+                          background: Container(
+                            color: Colors.red,
+                            child: const Icon(Icons.delete_forever),
                           ),
-                          subtitle: Text(
-                            snapshot.data![index].desc.toString(),
+                          onDismissed: (DismissDirection direction) {
+                            setState(() {
+                              dbHelper!.delete(snapshot.data![index].id!);
+                              notesList = dbHelper!.getNotesList();
+                              snapshot.data!.remove(snapshot.data![index]);
+                            });
+                          },
+                          key: ValueKey<int>(snapshot.data![index].id!),
+                          child: Card(
+                            child: ListTile(
+                              title: Text(
+                                snapshot.data![index].title.toString(),
+                              ),
+                              subtitle: Text(
+                                snapshot.data![index].desc.toString(),
+                              ),
+                            ),
                           ),
                         ),
-                      ),
-                    );
-                  },
-                );
+                      );
+                    },
+                  );
+                } else {
+                  return const CircularProgressIndicator();
+                }
               },
             ),
           ),
