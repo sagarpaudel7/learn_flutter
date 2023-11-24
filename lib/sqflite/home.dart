@@ -39,7 +39,7 @@ class _SqfLiteDemoState extends State<SqfLiteDemo> {
                     itemCount: snapshot.data?.length,
                     itemBuilder: (BuildContext context, int index) {
                       return InkWell(
-                        onTap: () {
+                        onDoubleTap: () {
                           dbHelper!.update(NotesModel(
                               id: snapshot.data![index].id!,
                               title: "Updated Title",

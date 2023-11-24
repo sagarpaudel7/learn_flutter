@@ -4,6 +4,7 @@ import 'package:learn_flutter/learn_provider/login_api_provider/auth_provider/lo
 import 'package:learn_flutter/learn_provider/opacity_changer_app/provider/opacity_provider.dart';
 import 'package:learn_flutter/learn_provider/wishlist_app/provider/wishlist_provider.dart';
 import 'package:learn_flutter/sqflite/home.dart';
+import 'package:learn_flutter/widgets/bottom_navigation_bar/btm_nvgt_bar.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -132,7 +133,8 @@ class LearnFlutter extends StatelessWidget {
         //home: const FutureBuilderWidget(),
         //home: const SnackBarWidget(),
         //home: const SharedPreferenceDemo(),
-        home: const SqfLiteDemo(),
+        //home: const SqfLiteDemo(),
+        home: const ButtomNavigationBarDemo(),
       ),
     );
   }
