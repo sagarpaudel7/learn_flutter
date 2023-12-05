@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/flutter_projects/shoes_shop/cart_provider.dart';
+import 'package:learn_flutter/flutter_projects/shoes_shop/home_page.dart';
 import 'package:learn_flutter/learn_provider/counter_app/provider/counter_provider.dart';
 import 'package:learn_flutter/learn_provider/login_api_provider/auth_provider/login_api_provider.dart';
 import 'package:learn_flutter/learn_provider/opacity_changer_app/provider/opacity_provider.dart';
@@ -36,6 +38,9 @@ class LearnFlutter extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => LoginApiProvider(),
         ),
+        ChangeNotifierProvider(
+          create: (context) => CartProvider(),
+        )
       ],
       //..............................................
       child: MaterialApp(
@@ -100,7 +105,7 @@ class LearnFlutter extends StatelessWidget {
         /* home: ProductDetail(
         product: products[0],
       ),*/
-        // home: const ShoesShop(),
+        home: const ShoesShop(),
         // home: const SetstateDemo(),
         // home: const CounterExample(),
         // home: const OpacitySlider(),
@@ -108,7 +113,7 @@ class LearnFlutter extends StatelessWidget {
         // home: const LoginScreen(),
 
 //==========Self UI Challenges 😅😁 =============
-        // home: const CurveContainerChallenge(), //create curve container
+        //home: const CurveContainerChallenge(), //create curve container
         //home: const GlassMorphismDemo(), //for glass effects
         //home: const NeomorphismDemo(),
 
@@ -136,7 +141,7 @@ class LearnFlutter extends StatelessWidget {
         //home: const SharedPreferenceDemo(),
         //home: const SqfLiteDemo(),
         //home: const ButtomNavigationBarDemo(),
-        home: const ShowModalBottomSheetDemo(),
+        //home: const ShowModalBottomSheetDemo(),
       ),
     );
   }

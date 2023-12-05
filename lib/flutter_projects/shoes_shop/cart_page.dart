@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/flutter_projects/shoes_shop/global_pro_variable.dart';
+import 'package:learn_flutter/flutter_projects/shoes_shop/cart_provider.dart';
+import 'package:provider/provider.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final cart = Provider.of<CartProvider>(context).cart;
     return Scaffold(
       appBar: AppBar(
         title: const Text("Cart Items"),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/flutter_projects/shoes_shop/cart_provider.dart';
+import 'package:provider/provider.dart';
 
 class ProductDetail extends StatefulWidget {
   final Map<String, Object> product;
@@ -16,6 +18,7 @@ class _ProductDetailState extends State<ProductDetail> {
   int selectedSize = 0;
   @override
   Widget build(BuildContext context) {
+    print(Provider.of<CartProvider>(context).cart);
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -125,7 +128,50 @@ class _ProductDetailState extends State<ProductDetail> {
                     child: ElevatedButton.icon(
                       style: ElevatedButton.styleFrom(backgroundColor: Theme.of(context).primaryColor, minimumSize: const Size(double.infinity, 50)),
                       onPressed: () {
-                        //     Navigator.pop(context);
+                        // Navigator.pop(context);
+                        if (selectedSize != 0) {
+                          Provider.of<CartProvider>(context, listen: false).addProduct({
+                            'id': widget.product['id'],
+                            'title': widget.product['title'],
+                            'price': widget.product['price'],
+                            'imageUrl': widget.product['imageUrl'],
+                            'company': widget.product['campany'],
+                            'size': selectedSize,
+                          });
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              backgroundColor: Colors.blue,
+                              duration: Duration(seconds: 1),
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
+                              content: Center(
+                                child: Text(
+                                  "Product added Successfully!",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 22,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          );
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              backgroundColor: Colors.blue,
+                              duration: Duration(seconds: 1),
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
+                              content: Center(
+                                child: Text(
+                                  "Please select the Size!",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 22,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          );
+                        }
                       },
                       icon: const Icon(
                         Icons.shopping_cart,
