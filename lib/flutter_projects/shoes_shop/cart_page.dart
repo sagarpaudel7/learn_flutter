@@ -34,9 +34,60 @@ class CartPage extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleSmall,
               ),
               //👉👉trailing le right side ma widget show garxa.
-              trailing: const Icon(
-                Icons.delete,
-                color: Colors.red,
+              trailing: IconButton(
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          title: const Text(
+                            "Delete Item",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 22,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          content: const Text(
+                            "Are you sure to delete item from cart?",
+                            style: TextStyle(
+                              color: Colors.brown,
+                              fontSize: 20,
+                              //       fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          actions: [
+                            TextButton(
+                                onPressed: () {},
+                                child: const Text(
+                                  "Yes",
+                                  style: TextStyle(
+                                    color: Colors.red,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                )),
+                            TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: const Text(
+                                  "No",
+                                  style: TextStyle(
+                                    color: Colors.blue,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                )),
+                          ],
+                        );
+                      });
+                },
+                icon: const Icon(
+                  Icons.delete,
+                  color: Colors.red,
+                ),
               ),
             );
           }),
