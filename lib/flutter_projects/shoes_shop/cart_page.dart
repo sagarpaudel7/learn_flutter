@@ -59,7 +59,10 @@ class CartPage extends StatelessWidget {
                           ),
                           actions: [
                             TextButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Provider.of<CartProvider>(context, listen: false).removeProduct(cartItem);
+                                  Navigator.pop(context);
+                                },
                                 child: const Text(
                                   "Yes",
                                   style: TextStyle(
