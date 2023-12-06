@@ -45,6 +45,7 @@ dependencies:
   shared_preferences: ^2.2.0
   sqflite: ^2.3.0
   path_provider: ^2.1.1
+  badges: ^3.1.2
   
 
 dev_dependencies:
