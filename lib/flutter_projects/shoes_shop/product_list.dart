@@ -42,8 +42,7 @@ class _ProductListState extends State<ProductList> {
             padding: const EdgeInsets.only(left: 10, top: 10),
             child: Row(
               children: [
-                Text("Shoes\n Collection",
-                    style: Theme.of(context).textTheme.titleLarge),
+                Text("Shoes\n Collection", style: Theme.of(context).textTheme.titleLarge),
                 //👉👉using expanded
                 const Expanded(
                   child: TextField(
@@ -85,13 +84,9 @@ class _ProductListState extends State<ProductList> {
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 10),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30)),
-                      backgroundColor: name == selectedBrand
-                          ? Theme.of(context).colorScheme.primary
-                          : const Color(0xFF848484),
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                      backgroundColor: name == selectedBrand ? Theme.of(context).colorScheme.primary : const Color(0xFF848484),
                     ),
                   ),
                 );
@@ -105,8 +100,7 @@ class _ProductListState extends State<ProductList> {
                   final product = products[index];
                   return GestureDetector(
                     onTap: () {
-                      Navigator.of(context)
-                          .push(MaterialPageRoute(builder: (context) {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                         return ProductDetail(product: product);
                       }));
                     },
@@ -114,9 +108,7 @@ class _ProductListState extends State<ProductList> {
                       title: product['title'] as String,
                       price: product['price'].toString(),
                       imageUrl: product['imageUrl'] as String,
-                      bgColor: index.isEven
-                          ? const Color.fromARGB(255, 193, 191, 191)
-                          : const Color.fromRGBO(216, 240, 249, 1),
+                      bgColor: index.isEven ? const Color.fromARGB(255, 193, 191, 191) : const Color.fromRGBO(216, 240, 249, 1),
                     ),
                   );
                 }),

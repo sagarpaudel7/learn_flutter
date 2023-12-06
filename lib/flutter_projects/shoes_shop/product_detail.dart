@@ -18,7 +18,7 @@ class _ProductDetailState extends State<ProductDetail> {
   int selectedSize = 0;
   @override
   Widget build(BuildContext context) {
-    print(Provider.of<CartProvider>(context).cart);
+    // print(Provider.of<CartProvider>(context).cart);
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -130,7 +130,8 @@ class _ProductDetailState extends State<ProductDetail> {
                       onPressed: () {
                         // Navigator.pop(context);
                         if (selectedSize != 0) {
-                          Provider.of<CartProvider>(context, listen: false).addProduct({
+                          context.read<CartProvider>().addProduct({
+                            //      Provider.of<CartProvider>(context, listen: false).addProduct({
                             'id': widget.product['id'],
                             'title': widget.product['title'],
                             'price': widget.product['price'],
