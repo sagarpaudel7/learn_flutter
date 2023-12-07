@@ -35,6 +35,7 @@ class _ShoesShopState extends State<ShoesShop> {
       //ani index le pages ko index 1,2 check garxa kun ma jane
 
       bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.grey.withOpacity(0.4),
           iconSize: 30,
           selectedFontSize: 0,
           unselectedFontSize: 0,
@@ -54,7 +55,7 @@ class _ShoesShopState extends State<ShoesShop> {
             BottomNavigationBarItem(
                 icon: badges.Badge(
                   showBadge: itemCount > 0 ? true : false,
-                  position: badges.BadgePosition.topEnd(end: -12, top: -12),
+                  position: badges.BadgePosition.topEnd(end: -18, top: -12),
                   badgeStyle: const badges.BadgeStyle(badgeColor: Color(0xFF7921F3)),
                   badgeAnimation: const badges.BadgeAnimation.scale(
                     animationDuration: Duration(seconds: 1),

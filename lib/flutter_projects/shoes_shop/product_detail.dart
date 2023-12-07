@@ -18,7 +18,8 @@ class _ProductDetailState extends State<ProductDetail> {
   int selectedSize = 0;
   @override
   Widget build(BuildContext context) {
-    // print(Provider.of<CartProvider>(context).cart);
+    print(Provider.of<CartProvider>(context).cart);
+    bool inCart = context.watch<CartProvider>().isInCart(widget.product["id"] as int);
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -126,61 +127,69 @@ class _ProductDetailState extends State<ProductDetail> {
                 Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: ElevatedButton.icon(
-                      style: ElevatedButton.styleFrom(backgroundColor: Theme.of(context).primaryColor, minimumSize: const Size(double.infinity, 50)),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: inCart ? Colors.grey : Theme.of(context).primaryColor,
+                        minimumSize: const Size(double.infinity, 50),
+                      ),
                       onPressed: () {
-                        // Navigator.pop(context);
-                        if (selectedSize != 0) {
-                          context.read<CartProvider>().addProduct({
-                            //      Provider.of<CartProvider>(context, listen: false).addProduct({
-                            'id': widget.product['id'],
-                            'title': widget.product['title'],
-                            'price': widget.product['price'],
-                            'imageUrl': widget.product['imageUrl'],
-                            'company': widget.product['campany'],
-                            'size': selectedSize,
-                          });
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              backgroundColor: Colors.blue,
-                              duration: Duration(seconds: 1),
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
-                              content: Center(
-                                child: Text(
-                                  "Product added Successfully!",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 22,
+                        if (!inCart) {
+                          if (selectedSize != 0) {
+                            context.read<CartProvider>().addProduct({
+                              //      Provider.of<CartProvider>(context, listen: false).addProduct({
+                              'id': widget.product['id'],
+                              'title': widget.product['title'],
+                              'price': widget.product['price'],
+                              'imageUrl': widget.product['imageUrl'],
+                              'company': widget.product['campany'],
+                              'size': selectedSize,
+                            });
+                            ScaffoldMessenger.of(context)
+                              ..hideCurrentSnackBar()
+                              ..showSnackBar(
+                                const SnackBar(
+                                  backgroundColor: Colors.blue,
+                                  duration: Duration(seconds: 1),
+                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
+                                  content: Center(
+                                    child: Text(
+                                      "Product added Successfully!",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 22,
+                                      ),
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ),
-                          );
-                        } else {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              backgroundColor: Colors.blue,
-                              duration: Duration(seconds: 1),
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
-                              content: Center(
-                                child: Text(
-                                  "Please select the Size!",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 22,
+                              );
+                          } else {
+                            ScaffoldMessenger.of(context)
+                              ..hideCurrentSnackBar()
+                              ..showSnackBar(
+                                const SnackBar(
+                                  backgroundColor: Colors.blue,
+                                  duration: Duration(seconds: 1),
+                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
+                                  content: Center(
+                                    child: Text(
+                                      "Please select the Size!",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 22,
+                                      ),
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ),
-                          );
-                        }
+                              );
+                          }
+                        } else {}
                       },
                       icon: const Icon(
                         Icons.shopping_cart,
                         color: Colors.white,
                       ),
-                      label: const Text(
-                        "Add To Cart",
-                        style: TextStyle(
+                      label: Text(
+                        inCart ? "Added to Cart" : "Add To Cart",
+                        style: const TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
