@@ -41,7 +41,12 @@ class _ProductDetailState extends State<ProductDetail> {
             ),
             child: Text(
               widget.product['title'] as String,
-              style: const TextStyle(fontFamily: "", fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
+              style: const TextStyle(
+                fontFamily: "",
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
             ),
           ),
           //👉👉spacer le flexing spacing create garxa jasle

@@ -8,7 +8,10 @@ import 'package:learn_flutter/learn_provider/wishlist_app/provider/wishlist_prov
 import 'package:learn_flutter/sqflite/home.dart';
 import 'package:learn_flutter/widgets/bottom_navigation_bar/btm_nvgt_bar.dart';
 import 'package:learn_flutter/widgets/bottom_sheet/bottom_sheet.dart';
+import 'package:learn_flutter/widgets/dropdown/dropdown_widget.dart';
 import 'package:provider/provider.dart';
+
+import 'flutter_projects/multi_app_provider/home.dart';
 
 void main() {
   runApp(const LearnFlutter());
@@ -105,7 +108,7 @@ class LearnFlutter extends StatelessWidget {
         /* home: ProductDetail(
         product: products[0],
       ),*/
-        home: const ShoesShop(),
+        //home: const ShoesShop(),
         // home: const SetstateDemo(),
         // home: const CounterExample(),
         // home: const OpacitySlider(),
@@ -142,6 +145,9 @@ class LearnFlutter extends StatelessWidget {
         //home: const SqfLiteDemo(),
         //home: const ButtomNavigationBarDemo(),
         //home: const ShowModalBottomSheetDemo(),
+        home: const DropdownWidget(),
+//======= With Provider ===============
+        //home: const HomeScreenProvider(),
       ),
     );
   }
